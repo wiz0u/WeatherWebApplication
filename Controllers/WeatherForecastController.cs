@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,6 +27,8 @@ namespace WeatherWebApplication.Controllers
 		[HttpGet]
 		public IEnumerable<WeatherForecast> Get()
 		{
+			_logger.LogInformation("Get() called");
+			Trace.TraceWarning("TraceWarning called");
 			var rng = new Random();
 			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
 			{
