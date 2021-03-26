@@ -28,8 +28,6 @@ namespace WeatherWebApplication.Controllers
 		public IEnumerable<WeatherForecast> Get()
 		{
 			_logger.LogInformation("Get() called");
-			Trace.TraceWarning("TraceWarning called");
-			Console.WriteLine("Console.WriteLine");
 			var rng = new Random();
 			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
 			{
